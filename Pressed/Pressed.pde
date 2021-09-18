@@ -1,20 +1,19 @@
-
-PVector pos1, pos2;
-
-void setup() {
-  size(640, 480, P2D);
-  pos1 = new PVector(300, 300);
-  pos2 = new PVector(width, height);
-
+void setup(){
+size(500,500);
 }
-
-void draw() {
-  strokeWeight(10);
-  stroke(255,255,0);
-  pos1.x+=10;
-  pos2.y+=10;
-  point(pos1.x, pos1.y);
-  point(pos2.x+1, pos2.y+1);
-  surface.setTitle("" + frameRate);
-
+void draw(){
+  if (mousePressed){
+  for (int i = 0; i < 320; i = i + 1){
+    line(120, i, 320, i); 
+  }
+  }
+  
+  if (keyPressed){
+    if(keyCode == UP) {
+      rect(mouseX, mouseY, 100, 100);
+    }
+    if(keyCode == DOWN) {
+    line(120, 120, 320, 120); 
+    }
+  }
 }
